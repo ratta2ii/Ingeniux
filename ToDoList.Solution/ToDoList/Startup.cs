@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ToDoList.Models;
 
 namespace ToDoList {
 
@@ -18,6 +19,9 @@ namespace ToDoList {
         public IConfigurationRoot Configuration { get; }
 
         public void ConfigureServices (IServiceCollection services) {
+            //! IMPORTANT: Data is only being seeded in this way to test loading and 
+            //! parsing an XML file
+            Item.SeedItemsFromXmlTesting();
             services.AddMvc ();
         }
 

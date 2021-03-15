@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Xml;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.Models;
 
@@ -7,7 +8,9 @@ namespace ToDoList.Controllers {
 
         [HttpGet ("/items")]
         public ActionResult Index () {
+
             List<Item> allItems = Item.GetAll ();
+
             return View (allItems);
         }
 
