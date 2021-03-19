@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ToDoList.Models;
 
-namespace ToDoList.Tests {
+namespace ToDoList.Tests 
+{
     
     [TestClass]
-    public class ItemTests : IDisposable {
+    public class ItemTests : IDisposable 
+    {
 
-        public void Dispose () {
+        public void Dispose () 
+        {
             Item.ClearAll ();
         }
 
         [TestMethod]
-        public void ItemConstructor_CreatesInstanceOfItem_Item () {
+        public void ItemConstructor_CreatesInstanceOfItem_Item () 
+        {
             Item newItem = new Item ("test");
             Assert.AreEqual (typeof (Item), newItem.GetType ());
         }
 
         [TestMethod]
-        public void GetDescription_ReturnsDescription_String () {
+        public void GetDescription_ReturnsDescription_String () 
+        {
             string description = "description test";
             Item newItem = new Item (description);
             string result = newItem.Description;
@@ -27,7 +32,8 @@ namespace ToDoList.Tests {
         }
 
         [TestMethod]
-        public void SetDescription_SetDescription_String () {
+        public void SetDescription_SetDescription_String () 
+        {
             string description = "description test.";
             Item newItem = new Item (description);
             string updatedDescription = "Wash Laundry";
@@ -37,14 +43,16 @@ namespace ToDoList.Tests {
         }
 
         [TestMethod]
-        public void GetAll_ReturnsEmptyList_ItemList () {
+        public void GetAll_ReturnsEmptyList_ItemList () 
+        {
             List<Item> newList = new List<Item> { };
             List<Item> result = Item.GetAll ();
             CollectionAssert.AreEqual (newList, result);
         }
 
         [TestMethod]
-        public void GetAll_ReturnsItems_ItemList () {
+        public void GetAll_ReturnsItems_ItemList () 
+        {
             string description01 = "description test";
             string description02 = "description 2 test";
             Item newItem1 = new Item (description01);
@@ -55,7 +63,8 @@ namespace ToDoList.Tests {
         }
 
         [TestMethod]
-        public void Find_ReturnsCorrectItem_Item () {
+        public void Find_ReturnsCorrectItem_Item () 
+        {
             string description01 = "description test";
             string description02 = "description 2 test";
             Item newItem1 = new Item (description01);
