@@ -8,7 +8,7 @@ namespace ToDoList.Controllers
 {
     public class CustomersController : Controller
     {
-        
+
         [HttpGet ("/customers")]
         public ActionResult CustomersXmlTest () 
         {
@@ -27,7 +27,9 @@ namespace ToDoList.Controllers
                     Country = node["COUNTRY"].InnerText
                 });
             }
+            
             return View (customers);
         }
+
     }
 }

@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ToDoList.Models;
 
-namespace ToDoList.Tests {
+namespace ToDoList.Tests 
+{
 
     [TestClass]
-    public class CategoryTests : IDisposable {
-        
-        public void Dispose () {
+    public class CategoryTests : IDisposable 
+    {  
+        public void Dispose () 
+        {
             Category.ClearAll ();
         }
 
         [TestMethod]
-        public void CategoryConstructor_CreatesInstanceOfCategory_Category () {
+        public void CategoryConstructor_CreatesInstanceOfCategory_Category () 
+        {
             Category newCategory = new Category ("test category");
             Assert.AreEqual (typeof (Category), newCategory.GetType ());
         }
 
         [TestMethod]
-        public void GetName_ReturnsName_String () {
+        public void GetName_ReturnsName_String () 
+        {
             string name = "Test Category";
             Category newCategory = new Category (name);
             string result = newCategory.Name;
@@ -27,14 +31,16 @@ namespace ToDoList.Tests {
         }
 
         [TestMethod]
-        public void GetId_ReturnsCategoryId_Int () {
+        public void GetId_ReturnsCategoryId_Int () 
+        {
             Category newCategory = new Category ("Test category");
             int result = newCategory.Id;
             Assert.AreEqual (1, result);
         }
 
         [TestMethod]
-        public void Find_ReturnsCorrectCategory_Category () {
+        public void Find_ReturnsCorrectCategory_Category () 
+        {
             Category category1 = new Category ("Category 1 test");
             Category category2 = new Category ("Category 2 test");
             int resultId = category2.Id;
@@ -43,7 +49,8 @@ namespace ToDoList.Tests {
         }
 
         [TestMethod]
-        public void GetAll_ReturnsAllCategoryObjects_CategoryList () {
+        public void GetAll_ReturnsAllCategoryObjects_CategoryList () 
+        {
             Category category1 = new Category ("Category 1 test");
             Category category2 = new Category ("Category 2 test");
             List<Category> list = new List<Category> () { category1, category2 };
@@ -52,7 +59,8 @@ namespace ToDoList.Tests {
         }
 
         [TestMethod]
-        public void AddItem_AssociatesItemWithCategory_ItemList () {
+        public void AddItem_AssociatesItemWithCategory_ItemList () 
+        {
             Item testItem = new Item ("Test item description");
             List<Item> items = new List<Item> () { };
             items.Add (testItem);

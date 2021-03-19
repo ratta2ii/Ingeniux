@@ -1,29 +1,33 @@
 @using ToDoList.Models;
 
-<h1>To Do List</h1>
+<div style="padding: 100px 100px">
 
-@if (Model.Count == 0)
-{
-    <p>There are no items in the list.</p>
-}
+    <h1>To Do List</h1>
 
-<ul>
-    @foreach (Item item in Model)
+    @if (Model.Count == 0)
     {
-        <li><a href='/items/@item.Id'>@item.Description</a></li>
+        <p>There are no items in the list.</p>
     }
-</ul>
 
-<div>
-    <a href="/items/new">Add a new item</a>
-</div>
+    <ul>
+        @foreach (Item item in Model)
+        {
+            <li><a href='/items/@item.Id'>@item.Description</a></li>
+        }
+    </ul>
 
-<div style="margin: 25px 0;">
-    <a href='/'>Go Home</a>
-</div>
+    <div>
+        <a href="/items/new">Add a new item</a>
+    </div>
 
-<div style="margin: 15px 0;" >
-    <form action="/items/delete" method="post">
-        <button type="submit" name="button">Clear All Items</button>
-    </form>
+    <div style="margin: 25px 0;">
+        <a href='/'>Go Home</a>
+    </div>
+
+    <div style="margin: 15px 0;">
+        <form action="/items/delete" method="post">
+            <button type="submit" name="button">Clear All Items</button>
+        </form>
+    </div>
+
 </div>

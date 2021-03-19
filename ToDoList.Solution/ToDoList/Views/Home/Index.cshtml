@@ -3,9 +3,12 @@
 <head>
 </head>
 
-<body>
+<body style="padding: 100px 100px">
 
-    <h1>Welcome to the To Do List!</h1>
+    <h1 style="margin-bottom: 50px">Ingeniux Stack Testing Playground</h1>
+
+    <h3>Test #1 (To Do List): RESTful routing, CRUD functionality for items, seeding items from xml doc, and testing using MSTest</h3>
+
     <div style="margin-bottom: 25px;">
         <a href='/items/new'>Add a new item</a>
     </div>
@@ -14,12 +17,12 @@
     </div>
 
     <div id="test" style="margin-top: 100px;">
-        <h2>The XMLHttpRequest Object Test #1</h2>
+        <h3>Test #2: AJAX and the XMLHttpRequest object</h3>
         <button type="button" onclick="loadDoc()">Change Content</button>
     </div>
 
     <div id="test" style="margin-top: 100px;">
-        <h2>The XMLHttpRequest Object Test #2</h2>
+        <h3>Test #3: Build a list of type Customer from xml doc, and render customers in View</h3>
         <form action="/customers">
             <button type="submit" >Load Customers</button>
         </form>
