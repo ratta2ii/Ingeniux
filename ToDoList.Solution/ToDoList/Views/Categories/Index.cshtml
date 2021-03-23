@@ -1,0 +1,27 @@
+@{
+    Layout = "_Layout";
+}
+
+@using ToDoList.Models;
+
+<h1>Categories</h1>
+
+@if (@Model.Count == 0)
+{
+    <h3>No categories have been added yet!</h3>
+}
+
+<ol>
+    @foreach (Category category in Model)
+    {
+        <li class="listItem"><a href='/categories/@category.Id'>@category.Name</a></li>
+    }
+</ol>
+
+<div>
+    <a href='/categories/new'>Add a new Category</a>
+</div>
+
+<div>
+    <a href='/'>Back home</a></p>
+</div>

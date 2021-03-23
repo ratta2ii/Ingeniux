@@ -1,0 +1,22 @@
+@using ToDoList.Models;
+
+@{
+    Layout = "_Layout";
+}
+
+<h3>@Model["category"].Name items:</h3>
+
+@if (@Model["items"].Count < 1) {
+    <p>There are currently no items for this category!</p>
+}
+
+<ol>
+@foreach (Item item in @Model["items"])
+{
+    <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Description</a></li>
+}
+</ol>
+
+<p><a href='/categories/@Model["category"].Id/items/new'>Add a New Item</a></p>
+<p><a href='/categories'>Return to Category List</a></p>
+<p><a href='/'>Return to Main Page</a></p>

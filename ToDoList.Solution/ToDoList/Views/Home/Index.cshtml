@@ -1,49 +1,8 @@
-<html>
+@{
+    Layout = "_Layout";
+}
 
-<head>
-</head>
+<h1>Welcome to the To Do List!</h1>
+<h3><a href='/categories'>View categories</a></h3>
+<h3><a href='/categories/new'>Add a new category</a></h3>
 
-<body style="padding: 100px 100px">
-
-    <h1 style="margin-bottom: 50px">Ingeniux Stack Testing Playground</h1>
-
-    <h3>Test #1 (To Do List): RESTful routing, CRUD functionality for items, seeding items from xml doc, and testing using MSTest</h3>
-
-    <div style="margin-bottom: 25px;">
-        <a href='/items/new'>Add a new item</a>
-    </div>
-    <div>
-        <a href='/items'>See list of items</a>
-    </div>
-
-    <div id="test" style="margin-top: 100px;">
-        <h3>Test #2: AJAX and the XMLHttpRequest object</h3>
-        <button type="button" onclick="loadDoc()">Change Content</button>
-    </div>
-
-    <div id="test" style="margin-top: 100px;">
-        <h3>Test #3: Build a list of type Customer from xml doc, and render customers in View</h3>
-        <form action="/customers">
-            <button type="submit" >Load Customers</button>
-        </form>
-    </div>
-
-    <script>
-        function loadDoc() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var xmlDoc = this.responseXML;
-                    console.log(xmlDoc);
-                    var message = xmlDoc.getElementsByTagName("MESSAGE")[0].childNodes[0].nodeValue;
-                    document.getElementById("test").innerHTML = "Message: " + message;
-                }
-            };
-            xhr.open("GET", "xmlTestRoute", true);
-            xhr.send();
-        }
-    </script>
-
-</body>
-
-</html>

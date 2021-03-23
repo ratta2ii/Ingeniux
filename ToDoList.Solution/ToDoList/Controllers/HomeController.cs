@@ -2,20 +2,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ToDoList.Controllers
 {
-    public class HomeController : Controller 
+    public class HomeController : Controller
     {
-        [HttpGet ("/")]
-        public ActionResult Index () 
+        [HttpGet("/")]
+        public ActionResult Index()
         {
-            return View ();
+            return View();
         }
 
-        [HttpGet ("/xmlTestRoute")]
-        public ContentResult GetXml () 
+        [Route("/favorite_photos")]
+        public ActionResult FavoritePhotos()
         {
-            string xmlString =
-                "<NOTE><FROM>Trevor</FROM><TO>Pri</TO><MESSAGE>Yay! The xml works. Check the console for the #document</MESSAGE></NOTE>";
-            return Content (xmlString, "text/xml");
+            return View();
         }
     }
 }

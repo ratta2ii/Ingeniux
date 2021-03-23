@@ -15,16 +15,16 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void CategoryConstructor_CreatesInstanceOfCategory_Category () 
+        public void CategoryConstructor_CreatesSingleInstanceOfCategory_Category () 
         {
-            Category newCategory = new Category ("test category");
+            Category newCategory = new Category ("Test category instantiation");
             Assert.AreEqual (typeof (Category), newCategory.GetType ());
         }
 
         [TestMethod]
-        public void GetName_ReturnsName_String () 
+        public void GetName_ReturnsCategoryName_String () 
         {
-            string name = "Test Category";
+            string name = "Homework";
             Category newCategory = new Category (name);
             string result = newCategory.Name;
             Assert.AreEqual (name, result);
@@ -39,7 +39,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void Find_ReturnsCorrectCategory_Category () 
+        public void Find_LocatesAndReturnsCorrectCategory_Category () 
         {
             Category category1 = new Category ("Category 1 test");
             Category category2 = new Category ("Category 2 test");
@@ -49,7 +49,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void GetAll_ReturnsAllCategoryObjects_CategoryList () 
+        public void GetAll_ReturnsAllCategoryInstances_CategoryList () 
         {
             Category category1 = new Category ("Category 1 test");
             Category category2 = new Category ("Category 2 test");
@@ -59,7 +59,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void AddItem_AssociatesItemWithCategory_ItemList () 
+        public void AddItem_SpecificCategoriesItems_ItemList () 
         {
             Item testItem = new Item ("Test item description");
             List<Item> items = new List<Item> () { };

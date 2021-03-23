@@ -5,8 +5,11 @@ namespace ToDoList.Models
     public class Category 
     {
         public int Id { get; }
+
         public string Name { get; set; }
+
         public List<Item> Items { get; set; }
+
         private static List<Category> _instances = new List<Category> { };
 
         public Category (string categoryName) 
@@ -36,6 +39,5 @@ namespace ToDoList.Models
         {
             Items.Add (item);
         }
-
     } 
 }

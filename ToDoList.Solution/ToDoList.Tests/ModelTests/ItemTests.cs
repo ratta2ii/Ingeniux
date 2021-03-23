@@ -23,7 +23,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void GetDescription_ReturnsDescription_String () 
+        public void GetDescription_ReturnsItemDescription_String () 
         {
             string description = "description test";
             Item newItem = new Item (description);
@@ -32,7 +32,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void SetDescription_SetDescription_String () 
+        public void SetDescription_SetsItemDescription_String () 
         {
             string description = "description test.";
             Item newItem = new Item (description);
@@ -51,7 +51,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void GetAll_ReturnsItems_ItemList () 
+        public void GetAll_ReturnsLisOfItems_ItemList () 
         {
             string description01 = "description test";
             string description02 = "description 2 test";
@@ -63,7 +63,7 @@ namespace ToDoList.Tests
         }
 
         [TestMethod]
-        public void Find_ReturnsCorrectItem_Item () 
+        public void Find_FindsAndReturnsItemById_Item () 
         {
             string description01 = "description test";
             string description02 = "description 2 test";
